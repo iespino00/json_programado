@@ -24,13 +24,30 @@ function getData($conn_sis)
         $i++;
     }
     echo json_encode($data);
+   
+    createJSON($data);
 
-     exec("git init",$output);
-
-    print_r($output); 
 
     
 }
 
+function createJSON($data)
+{
+    $jsonencoded = json_encode($data,JSON_UNESCAPED_UNICODE);
+    $fh = fopen("datos.json", 'w');
+    fwrite($fh, $jsonencoded);
+    fclose($fh);
+
+    updateRepository();
+}
+
+
+function updateRepository()
+{
+     exec("git add .");
+     exec("git commit -m 'Update' ");
+     exex("git push -u origin master",$output);
+    print_r($output); 
+}
 
 ?>
