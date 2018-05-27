@@ -44,8 +44,9 @@ function createJSON($data)
 
 function updateRepository()
 {
+    $fecha=date("d/m/Y");
     exec("git add .");
-    exec('git commit -m "Update" ');
+    exec('git commit -m "'.$fecha.'" ');
     exex('git push -u origin master');
 
 }
