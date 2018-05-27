@@ -47,7 +47,7 @@ function updateRepository()
     $fecha=date("d/m/Y");
     exec("git add .");
     exec('git commit -m "'.$fecha.'" ');
-    exex('git push -u origin master');
+    exec('git push -u origin master');
 
 }
 
