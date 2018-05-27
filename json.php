@@ -46,8 +46,8 @@ function updateRepository()
 {
     exec("git add .");
     exec('git commit -m "Update" ');
-    exex('git push -u origin master',$output);
-    print_r($output); 
+    exex('git push -u origin master');
+
 }
 
 ?>
